@@ -28,6 +28,9 @@
 */
 
 // Code Here 
+function first(arr,callback) {
+  callback(arr[0])
+}
 
 // Do not edit the code below.
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
@@ -48,7 +51,10 @@ first(names, function(firstName){
 */
 
 //Code Here
-
+function last(arr,callback) {
+  let lastItem = arr.length - 1
+  callback(arr[lastItem]);
+}
 // Do not edit the code below.
 last(names, function(lastName){
   console.log('The last name in names is ' + lastName);
@@ -66,6 +72,10 @@ last(names, function(lastName){
 */
 
 //Code Here
+function multiply(num1,num2,callback) {
+  let product = num1 * num2
+  callback(product);
+}
 
 // Do not edit the code below.
 multiply(4, 3, function(answer){
@@ -85,6 +95,9 @@ multiply(4, 3, function(answer){
 */
 
 //Code Here 
+function contains(arr,name,callback) {
+  arr.includes(name) ? callback(true) : callback(false);
+}
 
 // Do not edit the code below.
 contains(names, 'Colt', function(result){
@@ -106,6 +119,10 @@ contains(names, 'Colt', function(result){
 */
 
 //Code Here
+function uniq(arr,callback) {
+  let uniqArr = arr.filter((item, i) => arr.indexOf(item) == i);
+  callback(uniqArr);
+}
 
 // Do not edit the code below.
 uniq(names, function(uniqArr){
@@ -123,7 +140,9 @@ uniq(names, function(uniqArr){
 */
 
 //Code Here 
-
+function each(arr,callback) {
+  arr.forEach((name,i) => callback(name,i));
+}
 // Do not edit the code below.
 each(names, function(item, indice){
   console.log('The item in the ' + indice + ' position is ' + item)
@@ -135,11 +154,20 @@ each(names, function(item, indice){
 ////////// PROBLEM 7 //////////
 
 /*
-  Write a function called getUserById that takes in three parameters: an array of objects (users), an id and a callback, and searches for the user with a matching id.
+  Write a function called getUserById that takes in three parameters: an array of objects (users), an id and a callback, 
+  and searches for the user with a matching id.
   When the correct user object is found, invoke the callback with the user object as an argument.
 */
 
 // Code here
+function getUserById(users,id,callback) {
+for(let i=0; i<users.length; i++) {
+  if(users[i].id === id) {
+    callback(users[i]);
+  }
+}
+
+}
 
 // Do not edit the code below.
 var users = [
